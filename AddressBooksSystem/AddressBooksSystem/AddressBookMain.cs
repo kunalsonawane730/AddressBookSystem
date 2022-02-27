@@ -84,5 +84,29 @@ namespace AddressBooksSystem
 
             }
         }
+        public void DeleteContact(string dName)
+        {
+            Contact contacts2 = new Contact();
+
+            foreach (var data in addressBook)
+            {
+                if (data.FirstName == dName)
+                {
+                    contacts2 = data;
+                }
+            }
+            addressBook.Remove(contacts2);
+
+        }
+
+        public void Display()
+        {
+
+            foreach (var data in addressBook)
+            {
+                Console.WriteLine("Contact Data is: \n" + data.FirstName + "\n" + data.LastName + "\n" + data.Address + "\n" + data.City + "\n" + data.State + "\n" + data.Zip + "\n" + data.PhoneNumber + "\n" + data.Email);
+
+            }
+        }
     }
 }
