@@ -13,12 +13,24 @@ switch (num1)
         addressMain.AddContact();
         break;
     case 2:
-        addressMain.EditContact("kunal");
+        Console.WriteLine("Enter Name for Edit contact:\n");
+        string number1 = Console.ReadLine();
+        addressMain.EditContact(number1);
+        addressMain.Display();
         break;
     case 3:
+        Console.WriteLine("Enter Name for perform Delete contact:\n");
+        string number2 = Console.ReadLine();
+        addressMain.DeleteContact(number2);
+        addressMain.Display();
+        break;
+    case 4:
         break;
     default:
         Console.WriteLine("invalid input");
         break;
 }
+
+addressMain.Display();
+
 
