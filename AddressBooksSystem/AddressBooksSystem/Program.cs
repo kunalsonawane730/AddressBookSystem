@@ -1,15 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");
+
 using AddressBooksSystem;
 Console.WriteLine("Welcome to Address Book Program");
 AddressBookMain addressMain = new AddressBookMain();
-addressMain.AddContact();
 Console.WriteLine("Select option: \n 1. Add Contact\n 2.Edit Contact\n 3.Delete Contact\n 4.Exit");
 
 int num1 = int.Parse(Console.ReadLine());
+int count = 0;
+
 switch (num1)
 {
     case 1:
+        Console.WriteLine("Enter count for Address book:");
+        int addCount = Convert.ToInt32(Console.ReadLine());
+
+        Dictionary<int, string> dictionary = new Dictionary<int, string>();
+
+        for (int i = 1; i <= addCount; i++)
+        {
+            count++;
+            List<AddressBookMain> newAdd = new List<AddressBookMain>();
+            dictionary.Add(i, "New Dictionary");
+        }
+
+        Console.WriteLine(count + " Address Book Created..");
         addressMain.AddContact();
         break;
     case 2:
