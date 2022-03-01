@@ -9,6 +9,7 @@ namespace AddressBooksSystem
     public class AddressBookMain
     {
         List<Contact> addressBook = new List<Contact>();
+        bool check = false;
 
         public void AddContact()
         {
@@ -58,7 +59,7 @@ namespace AddressBooksSystem
 
             while (flag)
             {
-                int num = int.Parse(Console.ReadLine());
+                int num = Int32.Parse(Console.ReadLine());
 
                 switch (num)
                 {
@@ -101,13 +102,19 @@ namespace AddressBooksSystem
             {
                 if (data.FirstName == dName)
                 {
-                    contacts2 = data;
+                    check = true;
                 }
             }
-            addressBook.Remove(contacts2);
-
+            if (check == true)
+            {
+                addressBook.Remove(contacts2);
+                Console.WriteLine("Contact is deleted.");
+            }
+            else
+            {
+                Console.WriteLine("Name doesn't match with current list");
+            }
         }
-
         public void Display()
         {
 
